@@ -5,3 +5,4 @@ pyarrow
 jupyter
 seaborn
 scipy
+streamlit
