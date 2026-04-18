@@ -11,17 +11,22 @@ Pipeline complet de collecte, traitement, analyse NLP et modélisation ML sur de
 
 ```
 bigdata-immobilier/
-├── 01_scraping.ipynb          # Scraping via Firecrawl API (LeBonCoin + BienIci)
-├── 02_spark_nettoyage.ipynb   # Nettoyage et standardisation PySpark
-├── 03_spark_nlp.ipynb         # Analyse NLP MapReduce — Top 50 mots
-├── 04_modelisation.ipynb      # EDA + Régression + Classification PySpark ML
-├── app.py                     # Application Streamlit — estimation de prix
-├── data/
-│   ├── raw/                   # CSVs bruts scrappés
-│   └── clean/                 # Parquet nettoyé (partitionné par ville)
-├── models/
-│   └── gbt_regression/        # Modèle GBT sauvegardé (PipelineModel)
-└── .devcontainer/             # Config GitHub Codespaces (Docker + Java + PySpark)
+|-- .devcontainer/          # Config GitHub Codespaces (Docker + Java + PySpark)
+|-- projet/
+|   |-- data/
+|   |   |-- raw/            # CSV bruts scrappés
+|   |   `-- clean/          # Parquet nettoyé, partitionné par ville (.gitignore)
+|   |-- models/
+|   |   `-- gbt_regression/ # Modèle GBT sauvegardé (PipelineModel)
+|   |-- notebooks/
+|   |   |-- 01_scraping.ipynb
+|   |   |-- 02_spark_nettoyage.ipynb
+|   |   |-- 03_spark_nlp.ipynb
+|   |   `-- 04_modelisation.ipynb
+|   `-- app.py              # Application Streamlit (estimation de prix)
+|-- .gitignore
+|-- requirements.txt
+`-- README.md
 ```
 
 ---
