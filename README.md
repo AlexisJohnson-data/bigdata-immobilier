@@ -106,5 +106,5 @@ pip install pyspark streamlit pandas numpy matplotlib seaborn scipy
 
 | Membre | GitHub | Périmètre |
 |--------|--------|-----------|
-| Alexis Johnson | [@AlexisJohnson-data](https://github.com/AlexisJohnson-data) | Scraping · NLP · données CSV |
-| Saikou BAH | [@Saikou-BAH](https://github.com/Saikou-BAH) | Nettoyage PySpark · Modélisation · Rapport |
+| Alexis Johnson | [@AlexisJohnson-data](https://github.com/AlexisJohnson-data) | Scraping · NLP |
+| Saikou BAH | [@Saikou-BAH](https://github.com/Saikou-BAH) | Nettoyage PySpark · Modélisation  |
