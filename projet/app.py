@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import os
 
 # ─────────────────────────────────────────────
 # PAGE CONFIG
@@ -484,7 +485,8 @@ def load_spark_and_model():
         .getOrCreate()
     spark.sparkContext.setLogLevel("ERROR")
 
-    model = PipelineModel.load("/workspaces/bigdata-immobilier/projet/models/gbt_regression")
+    model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", "gbt_regression")
+    model = PipelineModel.load(model_path)
     return spark, model
 
 
@@ -492,13 +494,14 @@ def load_spark_and_model():
 # TOP 50 MOTS NLP
 # ─────────────────────────────────────────────
 TOP50_MOTS = [
-    'appartement','situ','tage','maison','quartier','rue','immeuble','calme',
-    'chambres','terrasse','cuisine','salle','lumineux','ascenseur','balcon',
-    'jardin','saint','vie','proximit','jour','place','vue','exclusivit',
-    'dernier','parking','vendre','coeur','commerces','garage','proche',
-    'duplex','cave','recherch','studio','entr','eau','copropri','offre',
-    'rement','immobilier','nov','sejour','espace','beau','entier',
-    'sud','expo','risques','geo','calme'
+    'appartement', 'salle', 'étage', 'cuisine', 'vie', 'copropriété',
+    'chambres', 'eau', 'espace', 'séjour', 'entrée', 'calme', 'quartier',
+    'proximité', 'maison', 'immeuble', 'pièces', 'immobilier', 'pièce',
+    'résidence', 'chambre', 'lumineux', 'commerces', 'terrasse', 'rue',
+    'ascenseur', 'équipée', 'exposé', 'place', 'jardin', 'balcon', 'vue',
+    'transports', 'cave', 'sud', 'entièrement', 'idéal', 'agréable',
+    'parking', 'risques', 'coeur', 'saint', 'immédiate', 'georisques',
+    'gouv', 'recherché', 'cadre', 'énergie', 'double', 'vis'
 ]
 
 
